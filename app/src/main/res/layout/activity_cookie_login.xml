@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 手动登录 / 账号设置：整页可滚动，键盘弹起时不挤压 -->
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zhixue_dark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:boxedEdges="all">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/screen_pad_h"
+            android:paddingRight="@dimen/screen_pad_h"
+            android:paddingTop="2dp"
+            android:paddingBottom="@dimen/gap_lg">
+
+            <View
+                android:id="@+id/accent_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/zhixue_blue" />
+
+            <FrameLayout
+                android:id="@+id/header_bar"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+
+                <TextView
+                    style="@style/HeaderTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/header_side_clear"
+                    android:paddingRight="@dimen/header_side_clear"
+                    android:text="@string/login_cookie" />
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="@dimen/top_btn_size"
+                    android:layout_height="@dimen/top_btn_size"
+                    android:layout_gravity="start|center_vertical"
+                    android:background="@drawable/bg_top_btn"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_back"
+                    android:tint="@color/zhixue_text"
+                    android:scaleType="fitCenter"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/back" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/et_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_height"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_field"
+                android:hint="账号 / 手机号"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/zhixue_text"
+                android:textColorHint="@color/zhixue_mute"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_height"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_field"
+                android:hint="密码（用于网页自动填充）"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/zhixue_text"
+                android:textColorHint="@color/zhixue_mute"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/et_cookie"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cookie_field_height"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_field"
+                android:gravity="top|start"
+                android:hint="Cookie（需包含 loginUserName）"
+                android:inputType="textMultiLine"
+                android:padding="9dp"
+                android:textColor="@color/zhixue_text"
+                android:textColorHint="@color/zhixue_mute"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btn_save_creds"
+                style="@style/PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_size"
+                android:layout_marginTop="7dp"
+                android:text="保存账号并打开登录页" />
+
+            <Button
+                android:id="@+id/btn_save_cookie"
+                style="@style/GhostButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_size"
+                android:layout_marginTop="5dp"
+                android:text="用 Cookie 登录" />
+
+            <Button
+                android:id="@+id/btn_clear"
+                style="@style/DangerButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_size"
+                android:layout_marginTop="5dp"
+                android:text="@string/logout" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.wear.widget.BoxInsetLayout>

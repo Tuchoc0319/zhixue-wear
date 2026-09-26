@@ -1,0 +1,23 @@
+# Android / Gradle
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+
+# 构建产物
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+
+# 本地凭据 / 会话（绝不入库）
+zai.key
+*.key
+secrets.properties

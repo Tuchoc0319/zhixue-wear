@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 关于页：顶栏（箭头返回 + 标题 + 药丸）+ 品牌卡 + 信息行 + 免责声明 + 退出（参考图二） -->
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zhixue_dark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:boxedEdges="all">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/screen_pad_h"
+            android:paddingRight="@dimen/screen_pad_h"
+            android:paddingTop="2dp"
+            android:paddingBottom="@dimen/gap_lg">
+
+            <View
+                android:id="@+id/accent_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/zhixue_blue" />
+
+            <FrameLayout
+                android:id="@+id/header_bar"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+
+                <TextView
+                    style="@style/HeaderTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/header_side_clear"
+                    android:paddingRight="46dp"
+                    android:text="@string/about"
+                    android:textColor="@color/zhixue_text" />
+
+                <ImageView
+                    android:id="@+id/btn_back"
+                    android:layout_width="@dimen/top_btn_size"
+                    android:layout_height="@dimen/top_btn_size"
+                    android:layout_gravity="start|center_vertical"
+                    android:background="@drawable/bg_top_btn"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_back"
+                    android:tint="@color/zhixue_text"
+                    android:scaleType="fitCenter"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/back" />
+
+                <TextView
+                    style="@style/Pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="非官方" />
+            </FrameLayout>
+
+            <!-- 品牌卡 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_about_card"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <FrameLayout
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/bg_brand_mark">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="智"
+                            android:textColor="#FF0A0A0A"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:includeFontPadding="false" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="9dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_name"
+                            android:textColor="@color/zhixue_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ANDROID WATCH · 定制端"
+                            android:textColor="@color/zhixue_grey"
+                            android:textSize="8sp"
+                            android:letterSpacing="0.06" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_divider" />
+
+                <!-- 信息行 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="版本"
+                        android:textColor="@color/zhixue_grey"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_ver_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/zhixue_text"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="构建号"
+                        android:textColor="@color/zhixue_grey"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_build_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/zhixue_text"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="当前账号"
+                        android:textColor="@color/zhixue_grey"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_account_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.4"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/zhixue_text"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/zhixue_mute"
+                android:textSize="9sp" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                style="@style/DangerButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/touch_size"
+                android:layout_marginTop="5dp"
+                android:text="退出登录" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="非官方客户端 · UNOFFICIAL"
+                android:textColor="@color/zhixue_mute"
+                android:textSize="8sp"
+                android:letterSpacing="0.08" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.wear.widget.BoxInsetLayout>

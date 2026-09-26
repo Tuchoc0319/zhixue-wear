@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="WearTheme" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowBackground">@color/zhixue_dark</item>
+        <item name="android:colorBackground">@color/zhixue_dark</item>
+        <item name="android:textColorPrimary">@color/zhixue_text</item>
+        <item name="android:textColorSecondary">@color/zhixue_grey</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnim</item>
+    </style>
+
+    <!-- 页面转场：淡入 + 轻微上浮 -->
+    <style name="WindowAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_up</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out_dim</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in_dim</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <!-- 顶栏标题 -->
+    <style name="HeaderTitle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- 顶栏药丸（应用中心 / 期中·11月） -->
+    <style name="Pill">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/zhixue_grey</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- 左上角圆形按钮（退出 / 返回） -->
+    <style name="TopIconButton">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:background">@drawable/bg_top_btn</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- 菜单行文字 -->
+    <style name="MenuLabel">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/zhixue_grey</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <style name="MenuLabelSelected" parent="MenuLabel">
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 大分数 -->
+    <style name="HeroScore">
+        <item name="android:textSize">@dimen/hero_score_size</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="HeroUnit">
+        <item name="android:textSize">@dimen/hero_unit_size</item>
+        <item name="android:textColor">@color/zhixue_grey</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- 列表行 -->
+    <style name="RowTitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="RowSub">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zhixue_grey</item>
+    </style>
+
+    <!-- 成绩行 -->
+    <style name="ScoreName">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zhixue_grey</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="ScoreValue">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 主按钮（柠檬绿） -->
+    <style name="PrimaryButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FF0A0A0A</item>
+        <item name="android:background">@drawable/bg_btn_primary</item>
+        <item name="android:minHeight">@dimen/touch_size</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="GhostButton">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/zhixue_text</item>
+        <item name="android:background">@drawable/bg_btn_ghost</item>
+        <item name="android:minHeight">@dimen/touch_size</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="DangerButton" parent="GhostButton">
+        <item name="android:textColor">@color/zhixue_red</item>
+        <item name="android:background">@drawable/bg_btn_danger</item>
+    </style>
+
+    <!-- 兼容旧名（避免残留引用报错） -->
+    <style name="WatchMenuButton" parent="MenuLabel">
+        <item name="android:background">@drawable/bg_row</item>
+    </style>
+
+    <!-- 菜单行：整行可点，按下/聚焦显示 #131313 卡片 -->
+    <style name="MenuRow">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_row</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+    <style name="MenuIcon">
+    </style>
+</resources>

@@ -1,0 +1,36 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.zhixue.wear'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.zhixue.wear"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources.excludes += ["META-INF/*.kotlin_module", "DebugProbesKt.bin"]
+    }
+}
+
+dependencies {
+    implementation 'androidx.annotation:annotation:1.8.2'
+    implementation 'androidx.wear:wear:1.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">智学网</string>
+    <string name="login">登录</string>
+    <string name="login_cookie">Cookie 登录</string>
+    <string name="marks">成绩</string>
+    <string name="exams">考试</string>
+    <string name="exam_detail">考试详情</string>
+    <string name="homework">作业</string>
+    <string name="messages">私信</string>
+    <string name="about">关于</string>
+    <string name="loading">加载中…</string>
+    <string name="logout">退出登录</string>
+    <string name="not_logged_in">未登录，请先登录</string>
+    <string name="exit">退出</string>
+    <string name="back">返回</string>
+</resources>

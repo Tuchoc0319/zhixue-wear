@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 通用行模板：
+     列表模式 = tv_row_title + tv_row_sub（成绩/考试/作业/私信都用这套）
+     成绩模式 = tv_score_name + bar_row + tv_score_value（参考图的细进度条行） -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_row"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingLeft="@dimen/row_pad_h"
+    android:paddingRight="@dimen/row_pad_h"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+    <!-- 模式 A：普通列表行 -->
+    <LinearLayout
+        android:id="@+id/row_list_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_row_title"
+            style="@style/RowTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tv_row_sub"
+            style="@style/RowSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- 模式 B：成绩行（学科名 | 进度条 | 分值） -->
+    <LinearLayout
+        android:id="@+id/row_score_mode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/score_row_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_score_name"
+            style="@style/ScoreName"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content" />
+
+        <com.zhixue.wear.ui.ScoreBar
+            android:id="@+id/bar_row"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bar_height"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tv_score_value"
+            style="@style/ScoreValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

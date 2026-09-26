@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 通用列表页：顶部强调线 + 顶栏（返回 + 标题 + 药丸）+ 可选大分数区 + 列表 -->
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zhixue_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/screen_pad_h"
+        android:paddingRight="@dimen/screen_pad_h"
+        android:paddingTop="2dp"
+        app:boxedEdges="all">
+
+        <View
+            android:id="@+id/accent_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/zhixue_blue" />
+
+        <FrameLayout
+            android:id="@+id/header_bar"
+            android:layout_width="match_parent"
+            android:layout_height="38dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/HeaderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/header_side_clear"
+                android:paddingRight="8dp"
+                android:textColor="@color/zhixue_text" />
+
+            <!-- 圆角方框 + 左箭头（对齐参考图三） -->
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/top_btn_size"
+                android:layout_height="@dimen/top_btn_size"
+                android:layout_gravity="start|center_vertical"
+                android:background="@drawable/bg_top_btn"
+                android:padding="5dp"
+                android:src="@drawable/ic_back"
+                android:tint="@color/zhixue_text"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/back" />
+        </FrameLayout>
+
+        <!-- 小标题：考试名称等（为空时隐藏） -->
+        <TextView
+            android:id="@+id/tv_header_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="@dimen/header_side_clear"
+            android:paddingRight="8dp"
+            android:textColor="@color/zhixue_grey"
+            android:textSize="10sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:visibility="gone" />
+
+        <!-- 大分数区（仅成绩页显示） -->
+        <LinearLayout
+            android:id="@+id/hero_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tv_hero_score"
+                    style="@style/HeroScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tv_hero_unit"
+                    style="@style/HeroUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_hero_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:textColor="@color/zhixue_grey"
+                android:textSize="10sp"
+                android:singleLine="true"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/zhixue_grey"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="@dimen/progress_size"
+                android:layout_height="@dimen/progress_size"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/zhixue_blue"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>

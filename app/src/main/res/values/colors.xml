@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设计语言：纯黑底 + 柠檬绿强调（色值由参考图逐像素采样得出） -->
+<resources>
+    <color name="zhixue_dark">#FF040404</color>      <!-- 全局背景（采样 #040404） -->
+    <color name="zhixue_card">#FF131313</color>      <!-- 卡片 / 选中行（采样 #131313） -->
+    <color name="zhixue_card_hi">#FF1A1A1A</color>   <!-- 更亮一档卡片 -->
+    <color name="zhixue_track">#FF1D1D1D</color>     <!-- 进度条底槽（采样 #1D1D1D） -->
+    <color name="zhixue_blue">#FFCBEE59</color>      <!-- 主强调 = 柠檬绿（采样 #CBEE59） -->
+    <color name="zhixue_green">#FFCBEE59</color>
+    <color name="zhixue_red">#FFFF6B6B</color>
+    <color name="zhixue_grey">#FFA2A3A0</color>      <!-- 次文字（采样 #A2A3A0） -->
+    <color name="zhixue_mute">#FF6E6E6E</color>      <!-- 更弱文字 -->
+    <color name="zhixue_line">#FF232323</color>      <!-- 分割线 -->
+    <color name="zhixue_accent_dim">#FF98B246</color><!-- 强调色暗部（采样 #98B246） -->
+    <color name="zhixue_text">#FFEFF0ED</color>      <!-- 主文字（采样 #EFF0ED） -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

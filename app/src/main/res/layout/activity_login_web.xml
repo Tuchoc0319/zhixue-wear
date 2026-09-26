@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 登录页：WebView 铺满全屏（极验验证码在页面内弹出，禁止任何遮挡 / 手势拦截）
+     顶部仅一条细窄状态条，居中一个加载指示 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zhixue_dark">
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/progress_size"
+        android:layout_height="@dimen/progress_size"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/zhixue_blue"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_hint"
+        android:gravity="center"
+        android:maxWidth="168dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:text="点此重新填充账号 / 密码"
+        android:textColor="@color/zhixue_grey"
+        android:textSize="9sp" />
+</FrameLayout>
