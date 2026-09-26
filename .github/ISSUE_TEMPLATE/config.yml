@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 文档
+    url: https://github.com/Tuchoc0319/zhixue-wear#-快速开始
+    about: 先看看 README 与 docs/ 里的说明
+  - name: 💬 讨论
+    url: https://github.com/Tuchoc0319/zhixue-wear/discussions
+    about: 不确定是不是 Bug？来讨论区聊聊

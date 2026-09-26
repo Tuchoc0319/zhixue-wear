@@ -11,7 +11,11 @@
 [![Wear OS](https://img.shields.io/badge/Wear%20OS-2.0%2B-orange.svg)](#环境要求)
 [![Based on](https://img.shields.io/badge/Based%20on-zhixuewang--python-lightgrey.svg)](THIRD-PARTY-LICENSES.md)
 
-<img src="docs/images/menu.png" width="30%"> <img src="docs/images/score.png" width="30%"> <img src="docs/images/about.png" width="30%">
+<img src="docs/images/anim-score.gif" width="31%">
+  <img src="docs/images/menu.png" width="31%">
+  <img src="docs/images/about.png" width="31%">
+
+  <sub>左：成绩页动效（转场 → 分数滚动 0→587 → 进度条填充）　中：主菜单　右：关于</sub>
 
 </div>
 
