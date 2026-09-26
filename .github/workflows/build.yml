@@ -1,0 +1,58 @@
+name: Build & Verify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platforms;android-34 build-tools;34.0.0 platform-tools'
+
+      - name: Check UI contract
+        run: python tools/check-ui-contract.py .
+
+      - name: Build debug APK
+        run: ./gradlew :app:assembleDebug --no-daemon
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: zhixue-wear-debug
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+  no-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for accidentally committed secrets / PII
+        run: |
+          set -e
+          PATTERNS='password\s*[:=]\s*["'"'"'][^"'"'"']{4,}|api[_-]?key\s*[:=]\s*["'"'"']?[A-Za-z0-9._-]{20,}|BEGIN [A-Z ]*PRIVATE KEY|SSO_R_SESSION_ID=|loginUserName=[0-9]{6,}'
+          if grep -rInE "$PATTERNS" --exclude-dir=.git --exclude-dir=.github . ; then
+            echo "::error::发现疑似密钥/隐私信息，请移除后再提交"
+            exit 1
+          fi
+          echo "OK: 未发现疑似密钥或隐私信息"
+          echo ""
+          echo "--- 检查 local.properties / apk 是否被误提交 ---"
+          if git ls-files | grep -E 'local\.properties$|\.apk$|\.keystore$|\.jks$'; then
+            echo "::error::本地配置或构建产物不应入库"
+            exit 1
+          fi
+          echo "OK: 无本地配置/构建产物入库"
